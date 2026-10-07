@@ -3,7 +3,13 @@ import React, { useState, useEffect } from 'react';
 export default function BookingModal({ isOpen, onClose, selectedService, onSchedule }) {
   const todayStr = new Date().toISOString().split('T')[0];
 
-  const [service, setService] = useState('Combo Sr. Murilo (Cabelo + Barba)');
+  const formatDateToBR = (dateStr) => {
+    if (!dateStr) return '';
+    const [year, month, day] = dateStr.split('-');
+    return `${day}/${month}/${year}`;
+  };
+
+  const [service, setService] = useState('Corte Tradicional / Moderno - R$ 50');
   const [barber, setBarber] = useState('Sem Preferência');
   const [date, setDate] = useState(todayStr);
   const [time, setTime] = useState('16:00');
@@ -18,7 +24,7 @@ export default function BookingModal({ isOpen, onClose, selectedService, onSched
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSchedule(service, barber, date, time);
+    onSchedule(service, barber, formatDateToBR(date), time);
     onClose();
   };
 
@@ -44,12 +50,9 @@ export default function BookingModal({ isOpen, onClose, selectedService, onSched
               onChange={(e) => setService(e.target.value)}
               required
             >
-              <option value="Combo Sr. Murilo (Cabelo + Barba)">Combo Sr. Murilo (Cabelo + Barba) - R$ 90</option>
               <option value="Corte Tradicional / Moderno">Corte Tradicional / Moderno - R$ 50</option>
               <option value="Barboterapia Premium">Barboterapia Premium - R$ 45</option>
               <option value="Pezinho & Acabamento">Pezinho & Acabamento - R$ 25</option>
-              <option value="Sobrancelha Navalhada">Sobrancelha Navalhada - R$ 20</option>
-              <option value="Tratamento Capilar">Tratamento Capilar - R$ 40</option>
             </select>
           </div>
 

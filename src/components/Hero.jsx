@@ -3,6 +3,12 @@ import React, { useState } from 'react';
 export default function Hero({ onSchedule }) {
   const todayStr = new Date().toISOString().split('T')[0];
 
+  const formatDateToBR = (dateStr) => {
+    if (!dateStr) return '';
+    const [year, month, day] = dateStr.split('-');
+    return `${day}/${month}/${year}`;
+  };
+
   const [service, setService] = useState('Combo Sr. Murilo (Cabelo + Barba)');
   const [barber, setBarber] = useState('Sem Preferência');
   const [date, setDate] = useState(todayStr);
@@ -10,7 +16,7 @@ export default function Hero({ onSchedule }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSchedule(service, barber, date, time);
+    onSchedule(service, barber, formatDateToBR(date), time);
   };
 
   return (
@@ -33,7 +39,7 @@ export default function Hero({ onSchedule }) {
           </p>
 
           <div className="hero-actions">
-            <button onClick={() => onSchedule(service, barber, date, time)} className="btn btn-whatsapp" id="btnHeroWhatsapp">
+            <button onClick={() => onSchedule(service, barber, formatDateToBR(date), time)} className="btn btn-whatsapp" id="btnHeroWhatsapp">
               <i className="fa-brands fa-whatsapp"></i> Agendar pelo WhatsApp
             </button>
             <a href="#servicos" className="btn btn-outline" id="btnHeroServices">

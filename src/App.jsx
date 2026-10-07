@@ -28,10 +28,16 @@ export default function App() {
   };
 
   const handleScheduleWhatsApp = (service, barber, date, time) => {
+    let formattedDate = date;
+    if (date && /^\d{4}-\d{2}-\d{2}$/.test(date)) {
+      const [year, month, day] = date.split('-');
+      formattedDate = `${day}/${month}/${year}`;
+    }
+
     let msg = `Olá! Gostaria de agendar um horário na *Sr. Murilo Barbearia*:\n\n`;
     if (service) msg += `- *Serviço:* ${service}\n`;
     if (barber) msg += `- *Profissional:* ${barber}\n`;
-    if (date) msg += `- *Data:* ${date}\n`;
+    if (formattedDate) msg += `- *Data:* ${formattedDate}\n`;
     if (time) msg += `- *Horário:* ${time}\n`;
     msg += `\nAguardo a confirmação da disponibilidade. Obrigado!`;
 
