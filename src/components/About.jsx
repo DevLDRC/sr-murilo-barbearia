@@ -45,7 +45,7 @@ export default function About() {
             </ul>
 
             <a
-              href="https://wa.me/5585999999999?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20barbearia."
+              href="https://wa.me/5585991272104?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20barbearia."
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary"

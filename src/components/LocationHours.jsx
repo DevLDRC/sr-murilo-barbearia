@@ -39,7 +39,7 @@ export default function LocationHours() {
             </div>
 
             <a
-              href="https://wa.me/5585999999999?text=Ol%C3%A1!%20Como%20fa%C3%A7o%20para%20chegar%20%C3%A0%20barbearia?"
+              href="https://wa.me/5585991272104?text=Ol%C3%A1!%20Como%20fa%C3%A7o%20para%20chegar%20%C3%A0%20barbearia?"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-gold"

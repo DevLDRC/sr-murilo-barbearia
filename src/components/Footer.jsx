@@ -15,7 +15,7 @@ export default function Footer() {
               <a href="https://www.instagram.com/sr.murilo.barbearia/" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram">
                 <i className="fa-brands fa-instagram"></i>
               </a>
-              <a href="https://wa.me/5585999999999" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="WhatsApp">
+              <a href="https://wa.me/5585991272104" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="WhatsApp">
                 <i className="fa-brands fa-whatsapp"></i>
               </a>
             </div>

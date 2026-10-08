@@ -10,7 +10,7 @@ import BookingModal from './components/BookingModal';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import Footer from './components/Footer';
 
-const WHATSAPP_NUMBER = '5585999999999';
+const WHATSAPP_NUMBER = '5585991272104';
 
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
